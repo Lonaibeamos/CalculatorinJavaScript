@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Calculator</title>
+</head>
+<body>
+  <div class="container"></div>
+
+  <!--<script>
+    /*
+    let number1 = "";
+    let op = null;
+    let number2 = "";
+    let isSecond = false;
+
+    function add(a, b) { return a + b; }
+    function subtract(a, b) { return a - b; }
+    function multiply(a, b) { return a * b; }
+    function divide(a, b) {
+      if (b === 0) return "ERROR";
+      return a / b;
+    }
+
+    function operate(op, n1, n2) {
+      n1 = Number(n1);
+      n2 = Number(n2);
+
+      switch (op) {
+        case "+": return add(n1, n2);
+        case "-": return subtract(n1, n2);
+        case "x": return multiply(n1, n2);
+        case "/": return divide(n1, n2);
+      }
+    }
+
+    const container = document.querySelector('.container');
+    container.style.cssText = `
+      width: 320px;
+      height: 420px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      padding: 10px;
+      border: 6px solid #333;
+      background: #111;
+      box-shadow: 0 0 20px #000;
+    `;
+
+    let input = document.createElement('input');
+    input.style.cssText = `
+      grid-column: span 4;
+      height: 70px;
+      font-size: 2.5rem;
+      text-align: right;
+      padding-right: 10px;
+      background: #222;
+      color: #fff;
+      border: none;
+    `;
+    input.readOnly = true;
+    container.appendChild(input);
+
+    const keys = [
+      "C", "⌫", "/", "x",
+      "7", "8", "9", "-",
+      "4", "5", "6", "+",
+      "1", "2", "3", "=",
+      "0", ".", "", ""
+    ];
+
+    keys.forEach((key) => {
+      if (key === "") return;
+
+      let btn = document.createElement("button");
+      btn.textContent = key;
+      btn.style.cssText = `
+        height: 60px;
+        font-size: 1.5rem;
+        background: #333;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      `;
+
+      btn.addEventListener("click", () => handleKey(key));
+      container.appendChild(btn);
+    });
+
+    function handleKey(value) {
+      // CLEAR
+      if (value === "C") {
+        number1 = "";
+        number2 = "";
+        op = null;
+        isSecond = false;
+        input.value = "";
+        return;
+      }
+
+      // BACKSPACE
+      if (value === "⌫") {
+        if (!isSecond) number1 = number1.slice(0, -1);
+        else number2 = number2.slice(0, -1);
+        input.value = number1 + (op || "") + number2;
+        return;
+      }
+
+      // OPERATOR
+      if (value === "+" || value === "-" || value === "x" || value === "/") {
+        if (number1 === "") return; // no operator without number
+
+        if (isSecond && number2 !== "") {
+          number1 = String(operate(op, number1, number2));
+          number2 = "";
+        }
+
+        op = value;
+        isSecond = true;
+        input.value = number1 + op;
+        return;
+      }
+
+      // EQUAL
+      if (value === "=") {
+        if (!op || number2 === "") return;
+
+        let result = operate(op, number1, number2);
+        input.value = result;
+
+        number1 = String(result);
+        number2 = "";
+        op = null;
+        isSecond = false;
+        return;
+      }
+
+      // DECIMAL
+      if (value === ".") {
+        if (!isSecond) {
+          if (!number1.includes(".")) number1 += ".";
+        } else {
+          if (!number2.includes(".")) number2 += ".";
+        }
+        input.value = number1 + (op || "") + number2;
+        return;
+      }
+
+      // NUMBER
+      if (!isSecond) number1 += value;
+      else number2 += value;
+
+      input.value = number1 + (op || "") + number2;
+    }
+
+    // KEYBOARD SUPPORT
+    window.addEventListener("keydown", (e) => {
+      const valid = ["0","1","2","3","4","5","6","7","8","9",".","+","-","/","x","*","Enter","Backspace","Escape"];
+      if (!valid.includes(e.key)) return;
+
+      if (e.key === "*") handleKey("x");
+      else if (e.key === "Enter") handleKey("=");
+      else if (e.key === "Escape") handleKey("C");
+      else if (e.key === "Backspace") handleKey("⌫");
+      else handleKey(e.key);
+    });
+  </script>
+  */
+-->
+
+  <script src = './script.js'></script>
+</body>
+</html>
